@@ -47,8 +47,17 @@ if __name__ == "__main__":
  for k,v in my_deList.items():
   
         request_de = sfmc_Requests(v,rest_url,soap_url,credentials)
-        json_formed = request_de.formDEContent(k)
+        json_formed = request_de.get_DE()
         count = json_formed['count']
-        print(f'My json: {count}')
-        print(f'DE REQUESTED: {k}')
-        mongoLib.writeDB("Marketing_Cloud", json_formed,k)
+        if count > 2500:
+          pages = round(count/2500)
+          page = 1
+          for page in range(pages):
+            json_formed = request_de.get_DE(page)
+            print(f'My json: {count}')
+            print(f'DE REQUESTED: {k}')
+            mongoLib.writeDB("Marketing_Cloud", json_formed,k)
+        else:
+          print(f'My json: {count}')
+          print(f'DE REQUESTED: {k}')
+          mongoLib.writeDB("Marketing_Cloud", json_formed,k)

@@ -5,7 +5,7 @@ import os
 
 class checkEnv:
  
- """ Incomplete performs check on enviroment, install libs, creates VE for python, and much more."""
+    """ Incomplete performs check on enviroment, install libs, creates VE for python, and much more."""
 
     def get_base_prefix_compat():
      """Get base/real prefix, or sys.prefix if there is none."""

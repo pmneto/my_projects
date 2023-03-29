@@ -6,7 +6,7 @@ from config import sfmcInfo
 
 class auth_Mc:
 
-"""Incomplete, shoud request and auth sfmc server-to-server integration"""
+ """Incomplete, shoud request and auth sfmc server-to-server integration"""
     
  def __init__(self):
      self.credentials = list()

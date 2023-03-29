@@ -2,7 +2,7 @@ import json
 import requests
 import sys
 from datetime import datetime as dt
-
+from collections import ChainMap
 
 class sfmc_Requests:
  
@@ -42,7 +42,7 @@ class sfmc_Requests:
    while(self.page<=self.pages):
     sys.stdout.write(f'Im requestin page :  {self.page}\n')
     self.requestDe = self.construct.get_DE(self.page)
-    self.json_file.update(self.requestDe)
+    self.json_file =  ChainMap(self.json_file,self.requestDe)
     print(len(self.json_file))
     #sys.stdout.write(f'My response:  {self.requestDe}\n')
     self.page +=1

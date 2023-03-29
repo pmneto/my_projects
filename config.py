@@ -1,7 +1,7 @@
 class sfmcInfo:
      
      class environmentVariables:
-      client_id, client_secret, data_extension = 'YOUR CLIENT ID', 'YOUR SECRET','YOUR DE ENDPOINT'
+      client_id, client_secret, data_extension = '', '',''
      
      class stats:
        stats = 'dev'
