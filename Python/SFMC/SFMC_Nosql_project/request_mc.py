@@ -6,13 +6,14 @@ from config import sfmcInfo
 
 class auth_Mc:
 
+ """Incomplete, shoud request and auth sfmc server-to-server integration"""
     
  def __init__(self):
-     self.credentials  = list()
-     self.rest_url = str()
-     self.soap_url = str()
-     self.client_id = sfmcInfo.client_id
-     self.client_secret = sfmcInfo.client_secret
+     self.credentials = list()
+     self.rest_url: str
+     self.soap_url: str
+     self.client_id = sfmcInfo.environmentVariables.client_id
+     self.client_secret = sfmcInfo.environmentVariables.client_secret
 
  def auth_flow(self):
     self.response_list = list()
